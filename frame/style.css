@@ -1,0 +1,343 @@
+/* Import Google Fonts and Material Icons */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* Global Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: #E0E0E0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+/* Links */
+a {
+  color: #8AB4F8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #4A90E2;
+  outline: none;
+  text-decoration: underline;
+}
+
+/* Scrollbar Styling */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+body::-webkit-scrollbar-track {
+  background: #1E1E1E;
+  border-radius: 6px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #4A90E2;
+  border-radius: 6px;
+  border: 3px solid #1E1E1E;
+}
+
+/* Header (atas.html) */
+body > header, /* fallback */
+header, 
+body[bgcolor="blue"] {
+  position: sticky;
+  top: 0;
+  height: 64px;
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(74, 144, 226, 0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 999;
+}
+
+header p,
+header font {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.08em;
+  margin: 0;
+  user-select: none;
+}
+
+/* Sidebar Menu (menu.html) */
+body[bgcolor="black"] {
+  background-color: #121212 !important;
+  padding: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  background-color: #1E1E1E;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(74, 144, 226, 0.25);
+  overflow: hidden;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+table td,
+table th {
+  padding: 12px 20px;
+  vertical-align: middle;
+  border-radius: 12px;
+}
+
+/* Menu Title row */
+table tr:first-child td {
+  background: linear-gradient(135deg, #4A90E2, #357ABD);
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+  text-align: center;
+  font-weight: 700;
+  user-select: none;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Menu Item rows */
+table tr:not(:first-child) td {
+  background-color: #292929;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+table tr:not(:first-child):hover td,
+table tr:not(:first-child):focus-within td {
+  background-color: #3E6AE1;
+  color: #FFFFFF;
+}
+
+table tr:not(:first-child) td a {
+  display: block;
+  color: #A9BFFF;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 12px;
+  transition: color 0.3s ease;
+}
+
+table tr:not(:first-child) td a:hover,
+table tr:not(:first-child) td a:focus {
+  color: #FFFFFF;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Non-link cells (sosial media, makanan) styled as disabled */
+table tr:not(:first-child) td:not(:has(a)) {
+  color: #666666;
+  font-style: italic;
+  cursor: default;
+  user-select: none;
+}
+
+/* Content Area (konten.html, biodata.html, galeri.html, jadwal kuliah.html) */
+body[bgcolor="#FFFFCC"] {
+  background-color: #1A1A1A !important;
+  padding: 24px;
+  font-size: 1rem;
+  color: #F0F0F0;
+}
+
+/* Content Tables */
+table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 32px auto;
+  border-collapse: separate;
+  border-spacing: 0 16px;
+  background-color: rgba(100, 100, 120, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  border-radius: 24px;
+  overflow: hidden;
+  border: none;
+  color: #E0E0E0;
+  font-weight: 600;
+}
+
+/* Table Header */
+table thead tr {
+  background: #293462;
+  color: #E0E0E0;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+table thead th,
+table tbody td {
+  padding: 16px 24px;
+  text-align: left;
+}
+
+/* Zebra stripe effect */
+table tbody tr:nth-child(even) {
+  background: rgba(74, 144, 226, 0.1);
+}
+
+/* Table Cells Rounded */
+table thead th:first-child {
+  border-top-left-radius: 24px;
+}
+table thead th:last-child {
+  border-top-right-radius: 24px;
+}
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 24px;
+}
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 24px;
+}
+
+/* Responsive images in galeri.html */
+img {
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(74,144,226,0.5);
+  transition: transform 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  user-select: none;
+}
+
+img:hover,
+img:focus {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(74,144,226,0.8);
+  outline: 3px solid #4A90E2;
+}
+
+/* Footer (bawah.html) */
+body[bgcolor="blue"]:not(header) {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
+  user-select: none;
+}
+
+/* Typography and scale */
+h2, h3, h4, th {
+  font-weight: 700;
+  color: #A9BFFF;
+  letter-spacing: 0.04em;
+}
+p, td, li {
+  font-weight: 500;
+  color: #F0F0F0;
+}
+
+/* Button and interactive elements style (for future expansion) */
+button,
+input[type="submit"] {
+  background: linear-gradient(135deg, #4A90E2, #357ABD);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+button:hover,
+button:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background: linear-gradient(135deg, #357ABD, #4A90E2);
+  transform: scale(1.05);
+  outline: none;
+  box-shadow: 0 6px 12px rgba(74,144,226,0.5);
+}
+
+/* Accessibility focus indicator */
+:focus-visible {
+  outline: 3px solid #4A90E2;
+  outline-offset: 2px;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-32 {
+  margin-top: 32px !important;
+}
+
+.mb-32 {
+  margin-bottom: 32px !important;
+}
+
+/* Responsive layout improvements for menus within frameset width */
+@media (max-width: 1024px) {
+  table {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Sidebar full width */
+  body[bgcolor="black"] table {
+    width: 100% !important;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Header and footer height compress */
+  body > header, body[bgcolor="blue"], header, footer {
+    height: 48px !important;
+    font-size: 1rem;
+  }
+}
+
+/* Microinteraction example - pulse effect for menu header */
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 6px #4A90E2;
+  }
+  50% {
+    text-shadow: 0 0 14px #81A9FF;
+  }
+}
+
+table tr:first-child td {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+  cursor: default;
+}
+
